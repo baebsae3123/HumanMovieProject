@@ -8,3 +8,5 @@
 
 movie-taste-test.tsx은 웹형
 나머지는 모바일형 파일
+
+<img width="462" height="1033" alt="image" src="https://github.com/user-attachments/assets/4d27ef6d-6dad-42d8-8cd7-b3bde04750d7" />
