@@ -6,8 +6,6 @@
 
 산출물 모바일형 2 : https://elude-yearn-55574295.figma.site/
 
-<img width="462" height="1033" alt="image" src="https://github.com/user-attachments/assets/4d27ef6d-6dad-42d8-8cd7-b3bde04750d7" />
-
 # 🎬 미루어보자 (Mirueoboja)
 
 ## 1. 💡 프로젝트 개요 및 목표
