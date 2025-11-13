@@ -6,4 +6,5 @@
 산출물 모바일형 2 : https://elude-yearn-55574295.figma.site/
 제목: 미루어보자 
 
-movie 파일은안씀
+movie-taste-test.tsx은 웹형
+나머지는 모바일형 파일
