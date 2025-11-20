@@ -388,3 +388,23 @@ MIT License
 **Made with ❤️ and 🎬 by Mirueoboja Team**
 movie-taste-test.tsx은 웹형
 나머지는 모바일형 파일
+
+## 실행방법
+
+# 1. 프로젝트 폴더 생성
+mkdir figma-backend
+cd figma-backend
+
+# 2. 파일들 생성 (위의 코드들을 각 파일에 복사)
+
+# 3. 의존성 설치
+npm install
+
+# 4. .env 파일 생성
+cp .env.example .env
+
+# 5. MongoDB 실행 (별도 터미널)
+mongod
+
+# 6. 서버 실행
+npm run dev
