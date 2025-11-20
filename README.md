@@ -9,169 +9,582 @@
 데이터베이스: mongodb 사용
 
 # 🎬 미루어보자 (Mirueoboja)
+# 🎬 미루어보자 (Mirueoboja)
 
-취향을 분석해서 맞춤 영화 추천을 제공하는 웹 애플리케이션
+<div align="center">
 
-## 실행 방법
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-18.0+-339933?logo=node.js&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?logo=mongodb&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-### 1. 백엔드 설치 및 실행
+**AI 기반 개인 맞춤형 영화 추천 플랫폼**
 
-| 단계                    | 설명                                | 명령어                                                                                                                                        |
-| --------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| **1. Git 클론 및 폴더 이동** | GitHub에서 백엔드 프로젝트 클론 후 폴더 이동      | `git clone https://github.com/your-username/mirueoboja-backend.git`<br>`cd mirueoboja-backend`                                             |
-| **2. 가상환경 생성 및 활성화**  | Python 가상환경 생성 및 활성화              | **Windows**: `python -m venv venv`<br>`venv\Scripts\activate`<br>**macOS/Linux**: `python3 -m venv venv`<br>`source venv/bin/activate` |
-| **3. 의존성 설치**         | `requirements.txt` 파일을 이용해 의존성 설치 | `pip install -r requirements.txt`                                                                                                    |
-| **4. 환경 변수 설정**       | `.env` 파일에 Anthropic API 키 설정     | `.env` 파일에 다음 내용 추가: `ANTHROPIC_API_KEY=your_api_key_here`                                                                            |
-| **5. 개발 서버 실행**       | 개발 서버 실행 (FastAPI)                | `python main.py` <br> 또는 <br> `uvicorn main:app --reload --host 0.0.0.0 --port 8000`                                           |
+취향을 분석해서 당신만을 위한 영화를 찾아드립니다 🎥
 
----
+[데모 보기](https://claude.ai/public/artifacts/9adf270e-a069-4939-a8b7-b686de9da0d5) · [모바일 버전](https://elude-yearn-55574295.figma.site/) · [이슈 제보](https://github.com/your-username/mirueoboja/issues)
 
-## 🗂️ 프로젝트 파일 구성
-
-### 주요 구성 요소:
-
-1. **server.js**: 메인 서버 파일
-   - Express 기반 RESTful API
-   - MongoDB와 Mongoose ORM
-   - JWT 인증 시스템
-   - 사용자, 제품, 주문 관리 기능
-
-2. **package.json**: 의존성 관리
-   - 필요한 패키지들:
-     - express (웹 프레임워크)
-     - mongoose (MongoDB ORM)
-     - jsonwebtoken (JWT 인증)
-     - bcryptjs (비밀번호 암호화)
-     - cors (CORS 처리)
-
-3. **.env.example**: 환경 변수 템플릿
-   - MongoDB 연결 정보
-   - JWT 비밀키
-   - 서버 포트 설정
+</div>
 
 ---
 
-### 2. 프로젝트 실행 (로컬 환경)
+## 📋 목차
 
-1. 프로젝트 폴더 생성
+- [✨ 주요 기능](#-주요-기능)
+- [🎯 프로젝트 개요](#-프로젝트-개요)
+- [🏗️ 기술 스택](#️-기술-스택)
+- [🚀 빠른 시작](#-빠른-시작)
+- [📦 설치 방법](#-설치-방법)
+- [⚙️ 환경 설정](#️-환경-설정)
+- [🎮 사용 방법](#-사용-방법)
+- [📁 프로젝트 구조](#-프로젝트-구조)
+- [🔌 API 문서](#-api-문서)
+- [🤝 기여하기](#-기여하기)
+- [📄 라이선스](#-라이선스)
+
+---
+
+## ✨ 주요 기능
+
+<table>
+<tr>
+<td width="50%">
+
+### 🎭 AI 취향 분석
+- Claude AI 기반 개인화된 취향 분석
+- 사용자 선호도 학습 및 저장
+- 실시간 영화 추천 알고리즘
+
+</td>
+<td width="50%">
+
+### 🎬 스마트 추천
+- 장르, 감독, 배우 기반 추천
+- 평점 및 리뷰 데이터 활용
+- 최신 트렌드 반영
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 👤 사용자 관리
+- JWT 기반 보안 인증
+- 개인 프로필 및 취향 관리
+- 시청 기록 추적
+
+</td>
+<td width="50%">
+
+### 📱 반응형 디자인
+- 모바일 최적화 UI
+- 크로스 플랫폼 지원
+- 직관적인 사용자 경험
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🎯 프로젝트 개요
+
+**미루어보자**는 AI를 활용하여 사용자의 영화 취향을 분석하고, 개인화된 영화를 추천하는 플랫폼입니다. 
+무엇을 볼지 고민하는 시간을 줄이고, 당신이 진짜 좋아할 영화를 찾아드립니다.
+
+### 💡 탄생 배경
+- 넷플릭스 같은 OTT 서비스의 영화가 너무 많아서 선택이 어려움
+- 단순 평점이 아닌 개인 취향 기반 추천의 필요성
+- AI 기술을 활용한 더 정확한 추천 시스템 구현
+
+---
+
+## 🏗️ 기술 스택
+
+### Backend
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+
+### Database
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![Mongoose](https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white)
+
+### AI/ML
+![Claude AI](https://img.shields.io/badge/Claude_AI-8A63D2?style=for-the-badge&logo=anthropic&logoColor=white)
+![Anthropic](https://img.shields.io/badge/Anthropic-191919?style=for-the-badge&logo=anthropic&logoColor=white)
+
+### DevOps & Tools
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+
+---
+
+## 🚀 빠른 시작
+
+### 전제 조건
 
 ```bash
-mkdir figma-backend
-cd figma-backend
-파일 생성 (server.js, package.json, .env.example) 후, 코드 복사
+# Node.js 18.0 이상
+node --version
 
-.env 파일 생성
+# Python 3.11 이상
+python --version
 
-bash
-코드 복사
-cp .env.example .env
-의존성 설치
+# MongoDB 설치 또는 MongoDB Atlas 계정
+```
 
-bash
-코드 복사
+### ⚡ 5분 안에 실행하기
+
+```bash
+# 1. 저장소 클론
+git clone https://github.com/your-username/mirueoboja.git
+cd mirueoboja
+
+# 2. 백엔드 설정
+cd backend
 npm install
-MongoDB 실행 (별도 터미널에서)
+cp .env.example .env
+# .env 파일에 API 키 입력
 
-bash
-코드 복사
+# 3. Python 서버 설정 (AI 엔진)
+cd ../python-backend
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+
+# 4. 서버 실행
+npm run dev  # Node.js 서버
+python main.py  # Python 서버
+
+# 5. 브라우저에서 열기
+# http://localhost:3000
+```
+
+---
+
+## 📦 설치 방법
+
+### 1️⃣ Node.js 백엔드 설치
+
+```bash
+# 프로젝트 폴더 생성
+mkdir mirueoboja-backend
+cd mirueoboja-backend
+
+# 의존성 설치
+npm install express mongoose cors jsonwebtoken bcryptjs dotenv
+
+# 또는
+npm install
+```
+
+#### 📄 package.json
+```json
+{
+  "name": "mirueoboja-backend",
+  "version": "1.0.0",
+  "description": "AI 기반 영화 추천 백엔드",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.0",
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1"
+  }
+}
+```
+
+### 2️⃣ Python AI 엔진 설치
+
+```bash
+# 가상환경 생성
+python -m venv venv
+
+# 가상환경 활성화
+# Windows
+venv\Scripts\activate
+# macOS/Linux
+source venv/bin/activate
+
+# 의존성 설치
+pip install -r requirements.txt
+```
+
+#### 📄 requirements.txt
+```txt
+fastapi==0.104.1
+uvicorn==0.24.0
+anthropic==0.7.0
+pydantic==2.5.0
+python-dotenv==1.0.0
+pymongo==4.6.0
+```
+
+---
+
+## ⚙️ 환경 설정
+
+### 🔑 환경 변수 설정
+
+#### Node.js Backend (.env)
+```env
+# MongoDB 연결
+MONGODB_URI=mongodb://localhost:27017/mirueoboja
+# 또는 MongoDB Atlas
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/mirueoboja
+
+# JWT 설정
+JWT_SECRET=your-super-secret-jwt-key-change-in-production
+
+# 서버 설정
+PORT=3000
+NODE_ENV=development
+
+# Python AI 서버
+PYTHON_API_URL=http://localhost:8000
+```
+
+#### Python Backend (.env)
+```env
+# Anthropic API
+ANTHROPIC_API_KEY=your-anthropic-api-key-here
+
+# MongoDB
+MONGODB_URI=mongodb://localhost:27017/mirueoboja
+
+# 서버 설정
+PORT=8000
+HOST=0.0.0.0
+```
+
+### 🗄️ MongoDB 설정
+
+#### 로컬 MongoDB
+```bash
+# MongoDB 설치 후
 mongod
-개발 서버 실행
 
-bash
-코드 복사
+# 데이터베이스 생성
+mongo
+> use mirueoboja
+```
+
+#### MongoDB Atlas (클라우드)
+1. https://www.mongodb.com/cloud/atlas 접속
+2. 무료 클러스터 생성
+3. 데이터베이스 사용자 생성
+4. IP 화이트리스트 설정 (0.0.0.0/0)
+5. 연결 문자열 복사
+
+---
+
+## 🎮 사용 방법
+
+### 개발 서버 실행
+
+```bash
+# 터미널 1: Node.js 백엔드
 npm run dev
-서버 주소: http://localhost:3000
 
-3. 백엔드 배포 (클라우드)
-백엔드를 클라우드 서버에 배포하여 인터넷에서 접근 가능하게 설정할 수 있습니다.
+# 터미널 2: Python AI 서버
+python main.py
 
-추천 배포 플랫폼:
-Vercel (가장 쉬운 방법, 무료)
+# 터미널 3: MongoDB (로컬 사용시)
+mongod
+```
 
-Vercel CLI 설치:
+### API 테스트
 
-bash
-코드 복사
+```bash
+# 헬스 체크
+curl http://localhost:3000/api/health
+
+# 회원가입
+curl -X POST http://localhost:3000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "password": "password123",
+    "name": "홍길동"
+  }'
+
+# 영화 추천 받기
+curl -X POST http://localhost:8000/api/recommend \
+  -H "Content-Type: application/json" \
+  -d '{
+    "preferences": {
+      "genres": ["액션", "SF"],
+      "mood": "스릴있는"
+    }
+  }'
+```
+
+---
+
+## 📁 프로젝트 구조
+
+```
+mirueoboja/
+├── 📂 backend/                 # Node.js 백엔드
+│   ├── server.js              # 메인 서버
+│   ├── package.json           # 의존성
+│   ├── .env                   # 환경 변수
+│   └── models/                # MongoDB 스키마
+│       ├── User.js
+│       ├── Movie.js
+│       └── Recommendation.js
+│
+├── 📂 python-backend/         # Python AI 엔진
+│   ├── main.py                # FastAPI 서버
+│   ├── requirements.txt       # Python 의존성
+│   ├── .env                   # 환경 변수
+│   └── services/
+│       ├── ai_service.py      # Claude AI 연동
+│       └── recommendation.py  # 추천 알고리즘
+│
+├── 📂 frontend/               # 프론트엔드 (선택사항)
+│   ├── index.html
+│   ├── styles.css
+│   └── app.js
+│
+├── 📂 docs/                   # 문서
+│   ├── API.md                 # API 문서
+│   └── ARCHITECTURE.md        # 아키텍처 설명
+│
+├── .gitignore
+├── README.md
+└── LICENSE
+```
+
+---
+
+## 🔌 API 문서
+
+### 🔐 인증 API
+
+#### 회원가입
+```http
+POST /api/auth/register
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "password123",
+  "name": "홍길동"
+}
+```
+
+**응답**
+```json
+{
+  "message": "User created successfully",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "user": {
+    "id": "507f1f77bcf86cd799439011",
+    "email": "user@example.com",
+    "name": "홍길동"
+  }
+}
+```
+
+#### 로그인
+```http
+POST /api/auth/login
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "password123"
+}
+```
+
+### 🎬 영화 API
+
+#### 영화 목록 조회
+```http
+GET /api/movies?category=액션&page=1&limit=20
+```
+
+#### 영화 상세 정보
+```http
+GET /api/movies/:id
+```
+
+### 🤖 AI 추천 API
+
+#### 개인화 추천
+```http
+POST /api/recommend
+Authorization: Bearer {token}
+Content-Type: application/json
+
+{
+  "preferences": {
+    "genres": ["액션", "SF"],
+    "mood": "긴장감 있는",
+    "actors": ["톰 크루즈"]
+  }
+}
+```
+
+**응답**
+```json
+{
+  "recommendations": [
+    {
+      "id": "movie_123",
+      "title": "미션 임파서블",
+      "score": 0.95,
+      "reason": "액션과 SF 요소가 결합된 긴장감 넘치는 영화입니다"
+    }
+  ]
+}
+```
+
+더 자세한 API 문서는 [API.md](docs/API.md)를 참고하세요.
+
+---
+
+## 🚢 배포
+
+### Vercel (Node.js)
+
+```bash
+# Vercel CLI 설치
 npm i -g vercel
-프로젝트 폴더에서 배포:
 
-bash
-코드 복사
+# 배포
 vercel
-MongoDB Atlas 사용 (무료 클라우드 DB):
 
-MongoDB Atlas에서 클러스터 생성
+# 환경 변수 설정
+vercel env add MONGODB_URI
+vercel env add JWT_SECRET
+```
 
-Heroku (무료 → 유료 전환 가능)
+### Railway (Python)
 
-Heroku CLI 설치 후 로그인 및 앱 생성:
+```bash
+# Railway CLI 설치
+npm i -g @railway/cli
 
-bash
-코드 복사
-heroku login
-heroku create my-backend
-Git으로 배포:
+# 로그인 및 배포
+railway login
+railway up
+```
 
-bash
-코드 복사
-git init
-git add .
-git commit -m "Initial commit"
-git push heroku main
-Railway (무료 $5 크레딧 제공)
+### Docker
 
-Railway 사이트 접속
+```bash
+# 이미지 빌드
+docker build -t mirueoboja-backend .
 
-GitHub 저장소 연결 후 자동 배포
+# 컨테이너 실행
+docker run -p 3000:3000 -p 8000:8000 mirueoboja-backend
+```
 
-AWS / Google Cloud / Azure (전문가용)
+---
 
-EC2, App Runner, Cloud Run 등 사용
+## 🧪 테스트
 
-⚙️ 전체 프로세스 요약
-로컬 개발: 내 컴퓨터에서 개발 → GitHub에 코드 올리기
+```bash
+# 백엔드 테스트
+npm test
 
-클라우드 배포: 클라우드 서비스 (Vercel, Railway, Heroku 등)에서 자동 배포
+# Python 테스트
+pytest
 
-MongoDB 저장소: MongoDB Atlas를 이용한 클라우드 데이터베이스 관리
+# 통합 테스트
+npm run test:integration
+```
 
-📦 시스템 요구사항
-Node.js 18.0+
+---
 
-Python 3.11+
+## 🤝 기여하기
 
-Anthropic API 키 (AI 추천 시스템)
+기여는 언제나 환영합니다! 🎉
 
-📁 프로젝트 파일 구조
-bash
-코드 복사
-figma-backend/
-├── server.js          # 메인 서버 코드
-├── package.json       # 의존성 정보
-├── .env              # 환경 변수 (절대 Git에 올리지 말것!)
-├── .env.example      # 환경 변수 예시
-├── .gitignore        # Git에서 제외할 파일들
-└── README.md         # 프로젝트 설명 파일
-🚀 배포 가이드
-Railway에서 가장 쉽게 배포 가능
+### 기여 방법
 
-Heroku: Git 배포 및 환경 설정
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-MongoDB Atlas를 이용하여 데이터베이스 연결
+### 코딩 컨벤션
 
-배포 후 서버를 https://your-deployed-url로 확인할 수 있습니다.
+- JavaScript: [Airbnb Style Guide](https://github.com/airbnb/javascript)
+- Python: [PEP 8](https://peps.python.org/pep-0008/)
+- Commit: [Conventional Commits](https://www.conventionalcommits.org/)
 
-💡 참고
-API 문서: API Docs에서 상세한 API 엔드포인트를 확인할 수 있습니다.
+---
 
-MongoDB 연결: 클라우드에서 데이터베이스를 관리하려면 MongoDB Atlas 사용을 추천합니다.
+## 📞 문의 및 지원
 
-🎯 가장 쉬운 방법:
+- 📧 Email: support@mirueoboja.com
+- 💬 Discord: [Join our community](https://discord.gg/mirueoboja)
+- 🐛 Issue: [GitHub Issues](https://github.com/your-username/mirueoboja/issues)
 
-Railway 사이트 접속
+---
 
-GitHub 연결
+## 👥 팀
 
-클릭 몇 번
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/username1">
+        <img src="https://github.com/username1.png" width="100px;" alt=""/>
+        <br />
+        <sub><b>홍길동</b></sub>
+      </a>
+      <br />
+      <sub>Backend Lead</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/username2">
+        <img src="https://github.com/username2.png" width="100px;" alt=""/>
+        <br />
+        <sub><b>김철수</b></sub>
+      </a>
+      <br />
+      <sub>AI Engineer</sub>
+    </td>
+  </tr>
+</table>
 
-배포 완료 ✅
+---
+
+## 📄 라이선스
+
+이 프로젝트는 MIT 라이선스를 따릅니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참고하세요.
+
+---
+
+## 🙏 감사의 말
+
+- [Anthropic](https://www.anthropic.com/) - Claude AI 제공
+- [MongoDB](https://www.mongodb.com/) - 데이터베이스
+- [FastAPI](https://fastapi.tiangolo.com/) - Python 웹 프레임워크
+- [Express.js](https://expressjs.com/) - Node.js 웹 프레임워크
+
+---
+
+<div align="center">
+
+**⭐ 이 프로젝트가 마음에 드셨다면 Star를 눌러주세요! ⭐**
+
+Made with ❤️ by Mirueoboja Team
+
+[🔝 맨 위로 가기](#-미루어보자-mirueoboja)
+
+</div>
