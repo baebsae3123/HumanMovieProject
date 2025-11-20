@@ -542,16 +542,16 @@ npm run test:integration
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/username1">
+      <a href="https://github.com/baebsae3123">
         <img src="https://github.com/username1.png" width="100px;" alt=""/>
         <br />
-        <sub><b>홍길동</b></sub>
+        <sub><b>황인성</b></sub>
       </a>
       <br />
       <sub>Backend Lead</sub>
     </td>
     <td align="center">
-      <a href="https://github.com/username2">
+      <a href="https://github.com/Godfather-Chan">
         <img src="https://github.com/username2.png" width="100px;" alt=""/>
         <br />
         <sub><b>김철수</b></sub>
