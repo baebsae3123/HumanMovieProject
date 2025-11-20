@@ -98,6 +98,10 @@ movie-taste-frontend/
 
 ### 백엔드 (FastAPI)
 
+(데이터베이스 이름 Cluster0)
+(아이디 )
+(패스워드 )
+
 ```
 movie-taste-backend/
 ├── main.py                       # FastAPI 앱 및 API 엔드포인트
