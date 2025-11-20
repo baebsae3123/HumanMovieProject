@@ -9,7 +9,6 @@
 데이터베이스: mongodb 사용
 
 # 🎬 미루어보자 (Mirueoboja)
-# 🎬 미루어보자 (Mirueoboja)
 
 <div align="center">
 
