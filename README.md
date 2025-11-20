@@ -22,6 +22,66 @@
 | **4. 환경 변수 설정**       | `.env` 파일에 Anthropic API 키 설정     | `.env` 파일에 다음 내용 추가: `env ANTHROPIC_API_KEY=your_api_key_here `                                                                            |
 | **5. 개발 서버 실행**       | 개발 서버 실행 (FastAPI)                | `bash python main.py ` <br> 또는 <br> `bash uvicorn main:app --reload --host 0.0.0.0 --port 8000 `                                           |
 
+주요 구성 요소:
+1. server.js - 메인 서버 파일
+
+Express 기반 RESTful API
+MongoDB와 Mongoose ORM
+JWT 인증 시스템
+사용자, 제품, 주문 관리 기능
+
+2. package.json - 의존성 관리
+필요한 패키지들:
+
+express (웹 프레임워크)
+mongoose (MongoDB ORM)
+jsonwebtoken (JWT 인증)
+bcryptjs (비밀번호 암호화)
+cors (CORS 처리)
+
+3. .env.example - 환경 변수 템플릿
+
+MongoDB 연결 정보
+JWT 비밀키
+서버 포트 설정
+
+시작하는 방법:
+bash# 1. 프로젝트 폴더 생성
+mkdir figma-backend
+cd figma-backend
+
+# 2. 파일들 생성 (위의 코드들을 각 파일에 복사)
+
+# 3. 의존성 설치
+npm install
+
+# 4. .env 파일 생성
+cp .env.example .env
+
+# 5. MongoDB 실행 (별도 터미널)
+mongod
+
+# 6. 서버 실행
+npm run dev
+이 백엔드는 일반적인 전자상거래/콘텐츠 사이트에 필요한 기본 기능을 모두 포함하고 있습니다. 사이트의 구체적인 요구사항에 맞춰 추가 기능이 필요하시면 말씀해주세요!재시도황이렇게만들면 백엔드는 어디에서 저장하는거야좋은 질문입니다! 백엔드를 실행하고 저장하는 방법을 단계별로 설명드리겠습니다.
+1️⃣ 로컬 개발 환경 (내 컴퓨터)
+bash# 1. 프로젝트 폴더 생성
+mkdir figma-backend
+cd figma-backend
+
+# 2. 파일 생성
+# server.js, package.json, .env.example 파일을 만들어서 위 코드 복사
+
+# 3. .env 파일 생성
+cp .env.example .env
+
+# 4. npm 초기화 및 설치
+npm install
+
+# 5. 서버 실행
+npm run dev
+이렇게 하면 http://localhost:3000에서 백엔드가 실행됩니다.
+
 2️⃣ 실제 서비스를 위한 배포 (클라우드)
 백엔드를 인터넷에서 접근 가능하게 하려면 클라우드 서버에 배포해야 합니다:
 추천 배포 플랫폼:
@@ -80,7 +140,6 @@ bash# 1. Railway 사이트 접속
 # 3. 클릭 몇 번
 # 4. 완료! ✅
 핵심: 내 컴퓨터에서 개발 → GitHub에 코드 올리기 → 클라우드 서비스에서 자동 배포
-
 ## 5. ⚙️ 설치 및 실행 방법
 
 ### 📦 전체 시스템 요구사항
