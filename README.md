@@ -149,15 +149,10 @@ npm install
 cp .env.example .env
 # .env 파일에 API 키 입력
 
-# 3. Python 서버 설정 (AI 엔진)
-cd ../python-backend
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
+# 3. 서버 실행
+cd backend
+node server.js
 
-# 4. 서버 실행
-npm run dev  # Node.js 서버
-python main.py  # Python 서버
 
 # 5. 브라우저에서 열기
 # http://localhost:3000
