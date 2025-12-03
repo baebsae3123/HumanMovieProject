@@ -129,30 +129,6 @@ node --version
 python --version
 
 # MongoDB 설치 또는 MongoDB Atlas 계정
-```
-
-### ⚡ 5분 안에 실행하기
-
-```bash
-# 1. 저장소 클론
-git clone https://github.com/your-username/mirueoboja.git
-cd mirueoboja
-
-# 2. 백엔드 설정
-cd backend
-npm install
-cp .env.example .env
-# .env 파일에 API 키 입력
-
-# 3. 서버 실행
-cd backend
-node server.js
-
-
-# 5. 브라우저에서 열기
-# http://localhost:3000
-```
-
 ---
 
 ## 📦 설치 방법
@@ -191,131 +167,55 @@ npm install
     "dotenv": "^16.3.1"
   }
 }
-```
-
-### 2️⃣ Python AI 엔진 설치
-
-```bash
-# 가상환경 생성
-python -m venv venv
-
-# 가상환경 활성화
-# Windows
-venv\Scripts\activate
-# macOS/Linux
-source venv/bin/activate
-
-# 의존성 설치
-pip install -r requirements.txt
-```
-
-#### 📄 requirements.txt
-```txt
-fastapi==0.104.1
-uvicorn==0.24.0
-anthropic==0.7.0
-pydantic==2.5.0
-python-dotenv==1.0.0
-pymongo==4.6.0
-```
-
 ---
 
-## ⚙️ 환경 설정
 
-### 🔑 환경 변수 설정
-
-#### Node.js Backend (.env)
-```env
-# MongoDB 연결
-MONGODB_URI=mongodb://localhost:27017/mirueoboja
-# 또는 MongoDB Atlas
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/mirueoboja
-
-# JWT 설정
-JWT_SECRET=your-super-secret-jwt-key-change-in-production
-
-# 서버 설정
-PORT=3000
-NODE_ENV=development
-
-# Python AI 서버
-PYTHON_API_URL=http://localhost:8000
-```
-
-#### Python Backend (.env)
-```env
-# Anthropic API
-ANTHROPIC_API_KEY=your-anthropic-api-key-here
-
-# MongoDB
-MONGODB_URI=mongodb://localhost:27017/mirueoboja
-
-# 서버 설정
-PORT=8000
-HOST=0.0.0.0
-```
-
-### 🗄️ MongoDB 설정
-
-#### 로컬 MongoDB
-```bash
-# MongoDB 설치 후
-mongod
-
-# 데이터베이스 생성
-mongo
-> use mirueoboja
-```
-
-#### MongoDB Atlas (클라우드)
-1. https://www.mongodb.com/cloud/atlas 접속
-2. 무료 클러스터 생성
-3. 데이터베이스 사용자 생성
-4. IP 화이트리스트 설정 (0.0.0.0/0)
-5. 연결 문자열 복사
-
----
-
-## 🎮 사용 방법
-
-### 개발 서버 실행
-
-```bash
-# 터미널 1: Node.js 백엔드
-npm run dev
-
-# 터미널 2: Python AI 서버
-python main.py
-
-# 터미널 3: MongoDB (로컬 사용시)
-mongod
 ```
 
 ### API 테스트
 
 ```bash
-# 헬스 체크
-curl http://localhost:3000/api/health
+# HumanMovieProject API 명세 ()
 
-# 회원가입
-curl -X POST http://localhost:3000/api/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{
-    "email": "user@example.com",
-    "password": "password123",
-    "name": "홍길동"
-  }'
+이 문서는 HumanMovieProject 서버에서 제공하는 주요 API 엔드포인트를 한눈에 확인할 수 있는 명세입니다.
 
-# 영화 추천 받기
-curl -X POST http://localhost:8000/api/recommend \
-  -H "Content-Type: application/json" \
-  -d '{
-    "preferences": {
-      "genres": ["액션", "SF"],
-      "mood": "스릴있는"
-    }
-  }'
+---
+
+## 1. 질문 목록 조회
+- **URL**: `http://125.129.177.130:4000/questions`  
+- **설명**: 사용자의 영화/음악 취향을 묻는 질문 목록 반환  
+
+---
+
+## 2. 인기 영화 추천
+- **URL**: `http://125.129.177.130:4000/select1`  
+- **설명**: 인기 영화 리스트 반환  
+
+---
+
+## 3. 최근 개봉작 추천
+- **URL**: `http://125.129.177.130:4000/select2`  
+- **설명**: 최근 개봉 영화 리스트 반환  
+
+---
+
+## 4. 장르별 추천
+- **URL**: `http://125.129.177.130:4000/select3`  
+- **설명**: 장르별 추천 영화 리스트 반환  
+
+---
+
+## 5. 추천 받기 (영화 + 음악)
+- **URL**: `http://125.129.177.130:4000/recommend`  
+- **설명**: 사용자가 선택한 항목 5개를 기반으로 영화 3개 + 음악 3개 추천  
+
+---
+
+## 6. 선택 기록 확인
+- **URL**: `http://125.129.177.130:4000/selections`  
+- **설명**: 지금까지 저장된 사용자의 선택 목록 조회  
+
+
 ```
 
 ---
