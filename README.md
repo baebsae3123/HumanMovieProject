@@ -125,27 +125,28 @@
 # Node.js 18.0 이상
 node --version
 
-# Python 3.11 이상
-python --version
-
 # MongoDB 설치 또는 MongoDB Atlas 계정
 ---
 
-## 📦 설치 방법
+## 📦 설치된 모든 확장
+mhutchie.git-graph
+ms-python.debugpy
+ms-python.python
+ms-python.vscode-pylance
+ms-python.vscode-python-envs
+ms-toolsai.jupyter
+ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
+ms-toolsai.vscode-jupyter-cell-tags
+ms-toolsai.vscode-jupyter-slideshow
 
-### 1️⃣ Node.js 백엔드 설치
 
-```bash
-# 프로젝트 폴더 생성
-mkdir mirueoboja-backend
-cd mirueoboja-backend
+## 실행방법
 
-# 의존성 설치
-npm install express mongoose cors jsonwebtoken bcryptjs dotenv
-
-# 또는
-npm install
-```
+cd backend
+1.node server.js 
+2.ngrok [아이피] [포트]
+따로
 
 #### 📄 package.json
 ```json
