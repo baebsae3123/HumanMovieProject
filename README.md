@@ -151,22 +151,11 @@ cd backend
 #### 📄 package.json
 ```json
 {
-  "name": "mirueoboja-backend",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "AI 기반 영화 추천 백엔드",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2",
-    "mongoose": "^8.0.0",
-    "cors": "^2.8.5",
-    "jsonwebtoken": "^9.0.2",
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^16.3.1"
-  }
+  "type": "module", 
+  "main": "server.js"
+
 }
 ---
 
@@ -179,7 +168,7 @@ cd backend
 # HumanMovieProject API 명세 ()
 
 이 문서는 HumanMovieProject 서버에서 제공하는 주요 API 엔드포인트를 한눈에 확인할 수 있는 명세입니다.
-
+API 테스트하는법 postman
 ---
 
 ## 1. 질문 목록 조회
