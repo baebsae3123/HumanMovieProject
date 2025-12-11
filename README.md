@@ -102,8 +102,15 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Mongoose](https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white)
 
-### AI/ML
-![Claude AI](https://img.shields.io/badge/Claude_AI-8A63D2?style=for-the-badge&logo=anthropic&logoColor=white)
+### Frontend  
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)  
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)  
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)  
+![TSX](https://img.shields.io/badge/TSX-3178C6?style=for-the-badge&logo=react&logoColor=white)
+
+### AI/ML  
+![Claude AI](https://img.shields.io/badge/Claude_AI-8A63D2?style=for-the-badge&logo=anthropic&logoColor=white)  
+![Gemini](https://img.shields.io/badge/Gemini_AI-4285F4?style=for-the-badge&logo=google&logoColor=white)
 
 ### DevOps & Tools
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
