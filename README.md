@@ -271,7 +271,7 @@ mirueoboja/
       <a href="https://github.com/Godfather-Chan">
         <img src="https://github.com/username2.png" width="100px;" alt=""/>
         <br />
-        <sub><b>김철수</b></sub>
+        <sub><b>임찬혁</b></sub>
       </a>
       <br />
       <sub>AI Engineer</sub>
